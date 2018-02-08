@@ -48,4 +48,12 @@
         android:textSize="@dimen/bottom_navigation_notification_text_size"
         android:textStyle="bold" />
 
+    <View android:id="@+id/bottom_navigation_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_navigation_indicator"
+        android:background="@drawable/item_indicator"
+        android:layout_gravity="bottom|bottom"
+        android:gravity="bottom"
+        />
+
 </FrameLayout>

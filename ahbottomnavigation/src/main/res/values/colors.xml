@@ -9,4 +9,5 @@
     <color name="colorBottomNavigationInactiveColored">#50FFFFFF</color>
     <color name="colorBottomNavigationSelectedBackground">#17000000</color>
     <color name="colorBottomNavigationNotification">#F63D2B</color>
+    <color name="colorBottomNavigationIndicator">#3F51B5</color>
 </resources>

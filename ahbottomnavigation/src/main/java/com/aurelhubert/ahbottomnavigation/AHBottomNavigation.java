@@ -406,6 +406,7 @@ public class AHBottomNavigation extends FrameLayout {
 			ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_item_icon);
 			TextView title = (TextView) view.findViewById(R.id.bottom_navigation_item_title);
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+			View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
 
 			icon.setImageDrawable(item.getDrawable(context));
 			title.setText(item.getTitle(context));
@@ -423,6 +424,7 @@ public class AHBottomNavigation extends FrameLayout {
 					view.setSelected(true);
 				}
 				icon.setSelected(true);
+                indicator.setVisibility(VISIBLE);
 				// Update margins (icon & notification)
 				if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
 					ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) icon.getLayoutParams();
@@ -437,6 +439,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 			} else {
 				icon.setSelected(false);
+                indicator.setVisibility(GONE);
 				ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
 						notification.getLayoutParams();
 				paramsNotification.setMargins(notificationInactiveMarginLeft, paramsNotification.topMargin,
@@ -526,6 +529,8 @@ public class AHBottomNavigation extends FrameLayout {
 			ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_small_item_icon);
 			TextView title = (TextView) view.findViewById(R.id.bottom_navigation_small_item_title);
 			TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+            View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
+
 			icon.setImageDrawable(item.getDrawable(context));
 
 			if (titleState != TitleState.ALWAYS_HIDE) {
@@ -545,6 +550,7 @@ public class AHBottomNavigation extends FrameLayout {
 					view.setSelected(true);
 				}
 				icon.setSelected(true);
+                indicator.setVisibility(VISIBLE);
 				// Update margins (icon & notification)
 
 				if (titleState != TitleState.ALWAYS_HIDE) {
@@ -562,6 +568,7 @@ public class AHBottomNavigation extends FrameLayout {
 				}
 			} else {
 				icon.setSelected(false);
+                indicator.setVisibility(GONE);
 				ViewGroup.MarginLayoutParams paramsNotification = (ViewGroup.MarginLayoutParams)
 						notification.getLayoutParams();
 				paramsNotification.setMargins(notificationInactiveMarginLeft, notificationInactiveMarginTop,
@@ -661,8 +668,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView title = (TextView) view.findViewById(R.id.bottom_navigation_item_title);
 				final ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_item_icon);
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+                final View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
 
 				icon.setSelected(true);
+				indicator.setVisibility(VISIBLE);
 				AHHelper.updateTopMargin(icon, inactiveMarginTop, activeMarginTop);
 				AHHelper.updateLeftMargin(notification, notificationInactiveMarginLeft, notificationActiveMarginLeft);
 				AHHelper.updateTextColor(title, itemInactiveColor, itemActiveColor);
@@ -722,8 +731,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView title = (TextView) view.findViewById(R.id.bottom_navigation_item_title);
 				final ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_item_icon);
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+                final View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
 
 				icon.setSelected(false);
+				indicator.setVisibility(GONE);
 				AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMarginTop);
 				AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
 				AHHelper.updateTextColor(title, itemActiveColor, itemInactiveColor);
@@ -782,8 +793,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView title = (TextView) view.findViewById(R.id.bottom_navigation_small_item_title);
 				final ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_small_item_icon);
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+                final View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
 
-				icon.setSelected(true);
+                icon.setSelected(true);
+                indicator.setVisibility(VISIBLE);
 
 				if (titleState != TitleState.ALWAYS_HIDE) {
 					AHHelper.updateTopMargin(icon, inactiveMargin, activeMarginTop);
@@ -849,8 +862,10 @@ public class AHBottomNavigation extends FrameLayout {
 				final TextView title = (TextView) view.findViewById(R.id.bottom_navigation_small_item_title);
 				final ImageView icon = (ImageView) view.findViewById(R.id.bottom_navigation_small_item_icon);
 				final TextView notification = (TextView) view.findViewById(R.id.bottom_navigation_notification);
+                final View indicator = (View) view.findViewById(R.id.bottom_navigation_indicator);
 
-				icon.setSelected(false);
+                icon.setSelected(false);
+                indicator.setVisibility(GONE);
 
 				if (titleState != TitleState.ALWAYS_HIDE) {
 					AHHelper.updateTopMargin(icon, activeMarginTop, inactiveMargin);
